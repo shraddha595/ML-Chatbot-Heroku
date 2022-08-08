@@ -38,10 +38,10 @@ def processRequest(req):
     #user_says=result.get("queryText")
     #log.write_log(sessionID, "User Says: "+user_says)
     parameters = result.get("parameters")
-    Petal_length=parameters.get("number")
-    Petal_width = parameters.get("number1")
-    Sepal_length=parameters.get("number2")
-    Sepal_width=parameters.get("number3")
+    Petal_length=parameters.get("yes")
+    Petal_width = parameters.get("no")
+    Sepal_length=parameters.get("yes")
+    Sepal_width=parameters.get("no")
     int_features = [Petal_length,Petal_width,Sepal_length,Sepal_width]
     
     final_features = [np.array(int_features)]
@@ -63,7 +63,7 @@ def processRequest(req):
         if(output==2):
             flowr = 'Virginica'
        
-        fulfillmentText= "Tale ketihogiro code..  {} !".format(flowr)
+        fulfillmentText= "Thank you for the option  {} !".format(flowr)
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
             "fulfillmentText": fulfillmentText
